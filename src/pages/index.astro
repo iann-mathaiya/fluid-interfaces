@@ -1,12 +1,20 @@
 ---
 import { Image } from "astro:assets"
-import FluidLogo from "../assets/fluid-interfaces.png";
 import RootLayout from '../layouts/RootLayout.astro';
+import LightFluidLogo from "../assets/fluid-interfaces-light.png";
+// import DarkFluidLogo from "../assets/fluid-interfaces-dark.png";
 ---
 
 <RootLayout>
-    <main class="mx-auto w-full max-w-screen-md min-h-screen">
-        <Image src={FluidLogo} alt="Logo" class="w-full" />
+    <div class="bg-zinc-950">
+        <div class="mx-auto w-full max-w-screen-md min-h-screen flex items-center justify-center">
+            <Image src={LightFluidLogo} alt="Logo" class="w-full opacity-60" />
+        </div>
+    </div>
 
-    </main>
+    <div class="bg-white">
+        <div class="mx-auto w-full max-w-screen-md min-h-screen flex items-center justify-center">
+            <!-- <Image src={DarkFluidLogo} alt="Logo" class="w-full" /> -->
+        </div>
+    </div>
 </RootLayout>
