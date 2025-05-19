@@ -3,6 +3,9 @@ import "../styles/global.css";
 import { Font } from "astro:assets";
 
 const { title, description } = Astro.props;
+
+const defaultTitle = "Fluid Interfaces";
+const defaultDescription = "Fluid Interfaces Design System is a design system that provides interactive components for building modern web apps. Fluid Interfaces are designed to be flexible, customizable, and easy to use, making it a great choice for developers looking to create beautiful and functional user interfaces.";
 ---
 
 <!doctype html>
@@ -12,11 +15,24 @@ const { title, description } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<!-- TO DO: add description -->
-		<meta name="description" content={description} />
-		<title>{title ?? "Fluid Interfaces"}</title>
+		<title>{title ?? defaultTitle}</title>
+		<meta name="description" content={description ?? defaultDescription} />
+
+		<meta property="og:url" content="https://fluidinterfaces.com/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={defaultTitle} />
+		<meta property="og:description" content={defaultDescription} />
+		<meta property="og:image" content={`${Astro.url.origin}/assets/social-image.jpg`} />
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content="fluidinterfaces.com" />
+		<meta property="twitter:url" content="https://fluidinterfaces.com/" />
+		<meta name="twitter:title" content={defaultTitle} />
+		<meta name="twitter:description" content={defaultDescription} />
+		<meta name="twitter:image" content={`${Astro.url.origin}/assets/social-image.jpg`} />
+
 		<Font cssVariable="--font-geist" preload />
-		<title>Astro Basics</title>
 	</head>
 
 	<body class="bg-zinc-950">
